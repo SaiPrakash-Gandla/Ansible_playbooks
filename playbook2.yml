@@ -1,0 +1,29 @@
+---
+- name: Cofiguring apache2
+  hosts: all
+  tasks:
+    - name: Install apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: Edit the index.html file
+      copy:
+        content: 'Welcome to AWS devops'
+        dest: /var/www/html/index.html
+    - name: Restart apache2
+      service:
+        name: apache2
+        state: restarted
+    - name: Check apache response on Server1
+      uri:
+        url: http://172.31.21.232
+        status_code: 200
+    - name: Check apache response on Server2
+      uri:
+        url: http://172.31.17.135
+        status_code: 200
+...
+
+
+

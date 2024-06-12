@@ -1,0 +1,11 @@
+---
+- name: install sowfware applications
+  hosts: all
+  tasks:
+    - name: install/uninstall software
+      apt:
+        name: "{{a}}"
+        state: "{{b}}"
+        update_cache: "{{c}}"
+...
+

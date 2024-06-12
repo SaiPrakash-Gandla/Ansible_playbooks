@@ -1,0 +1,4 @@
+
+<tomcat-users>
+  <user username="Intelliqit" password="Intelliqit" roles="manager-script"/>
+</tomcat-users>
